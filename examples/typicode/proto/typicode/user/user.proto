@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package typicode.user;
+
+import "google/api/annotations.proto";
+
+import "typicode/user/user.proto";
+
+option go_package = "github.com/Kuwerin/protoc-gen-httpclient/examples/todo/typicode/user;userapi";
+
+// UserModel.
+message User {
+  // The unique user identifier.
+  uint32 id = 1;
+
+  // The name of the user.
+  string username = 2;
+
+  // The phone of the user.
+  string phone = 3;
+
+  // The email of the user.
+  string email = 4;
+}
