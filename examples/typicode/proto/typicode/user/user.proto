@@ -2,10 +2,6 @@ syntax = "proto3";
 
 package typicode.user;
 
-import "google/api/annotations.proto";
-
-import "typicode/user/user.proto";
-
 option go_package = "github.com/Kuwerin/protoc-gen-httpclient/examples/todo/typicode/user;userapi";
 
 // UserModel.
