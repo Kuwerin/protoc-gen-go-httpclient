@@ -14,4 +14,6 @@ RUN go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2
 RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28.0
 
-RUN go install github.com/Kuwerin/protoc-gen-go-httpclient@v0.1.0
+ENV GOPRIVATE=github.com/Kuwerin
+
+RUN go install github.com/Kuwerin/protoc-gen-go-httpclient@latest

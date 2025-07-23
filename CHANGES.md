@@ -1,3 +1,7 @@
+## v0.2.0 (2025-07-23)
+
+- Make package able to install.
+
 ## v0.1.0 (2025-07-23)
 
 - Add server code generation.
