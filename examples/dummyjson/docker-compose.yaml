@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    volumes:
+      - ../../../protoc-gen-go-httpclient:/protoc-gen-go-httpclient
+
+  grpcox:
+    image: gusaul/grpcox
+    ports:
+      - 6969:6969

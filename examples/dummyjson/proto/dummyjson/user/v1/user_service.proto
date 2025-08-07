@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package dummyjson.user.v1;
+
+import "google/api/annotations.proto";
+import "dummyjson/user/v1/user.proto";
+
+option go_package = "github.com/Kuwerin/protoc-gen-go-httpclient/examples/dummyjson/user/v1;userapi";
+
+// UserService.
+service UserService {
+  // Gets a user.
+  rpc GetUser(GetUserRequest) returns (User) {
+    option (google.api.http) = {
+      get: "/users/{id}"
+    };
+  }
+
+  // Lists users.
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse) {
+    option (google.api.http) = {
+      get: "/users"
+    };
+  }
+}
+
+// Request message for dummyjson.user.v1.GetUser method.
+message GetUserRequest {
+  // The unique user identifier.
+  string id = 1;
+}
+
+// Request message for dummyjson.user.v1.ListUsers method.
+message ListUsersRequest {
+  // The result page size to display.
+  uint32 limit = 1;
+
+  // The offset of entities to skip.
+  uint32 skip = 2;
+}
+
+// Response message for dummyjson.user.v1.ListUsers method.
+message ListUsersResponse {
+  // The list of users.
+  repeated User users = 1;
+
+  // The total entities in the collection.
+  uint32 total = 2;
+
+  // The result page size to display.
+  uint32 limit = 3;
+
+  // The offset of entities to skip.
+  uint32 skip = 4;
+}
