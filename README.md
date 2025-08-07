@@ -1,4 +1,4 @@
-#💥 protoc-gen-go-httpclient
+# 💥 protoc-gen-go-httpclient
 
 Highly experimental plugin that allows to call an HTTP endpoints from native gRPC in no time.
 
