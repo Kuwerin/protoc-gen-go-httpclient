@@ -8,8 +8,7 @@ var List = template.Must(template.New("list").Parse(`
 		mw.logger.Log(
 			"package", "{{ .Package }}",
 			"method", "{{ .UnderscoreMethodname }}",
-			"limit", in.Limit,
-			"offset", in.Offset,
+			{{ range .Method.Input.Fields }} "{{ .Desc.JSONName }}", in.{{ .GoName }}, {{ end }}
 			"error", err,
 			"took", time.Since(begin),
 		)

@@ -9,11 +9,12 @@ var List = template.Must(template.New("logging_list").Parse(`
 	var urlBuilder strings.Builder
 	urlBuilder.WriteString(h.reqURL)
 	urlBuilder.WriteString("{{ .Rule.URL }}")
-	urlBuilder.WriteRune('/')
-	urlBuilder.WriteString("?limit=")
-	urlBuilder.WriteString(strconv.Itoa(int(in.Limit)))
-	urlBuilder.WriteString("&offset=")
-	urlBuilder.WriteString(strconv.Itoa(int(in.Offset)))
+	urlBuilder.WriteRune('?')
+	{{ range .Method.Input.Fields }}
+	urlBuilder.WriteString("{{ .Desc.JSONName }}")
+	urlBuilder.WriteString(strconv.Itoa(int(in.{{ .GoName }})))
+	urlBuilder.WriteRune('&')
+	{{ end }}
 
 	req, err := http.NewRequestWithContext(ctx, "{{ .Rule.RequestType }}", urlBuilder.String(), nil)
 	if err != nil {
