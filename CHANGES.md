@@ -1,3 +1,6 @@
+## v0.4.0 (2025-08-07)
+- Update List method behavior
+
 ## v0.3.0 (2025-07-23)
 - Add helperfunc to register gRPC server
 
