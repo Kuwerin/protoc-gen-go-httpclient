@@ -7,7 +7,7 @@ toolchain go1.23.11
 replace github.com/Kuwerin/protoc-gen-go-httpclient => ../../../protoc-gen-go-httpclient
 
 require (
-	github.com/Kuwerin/protoc-gen-go-httpclient v0.3.0
+	github.com/Kuwerin/protoc-gen-go-httpclient v0.4.0
 	github.com/go-kit/log v0.2.1
 	github.com/golang/protobuf v1.5.4
 	google.golang.org/genproto/googleapis/api v0.0.0-20250721164621-a45f3dfb1074
