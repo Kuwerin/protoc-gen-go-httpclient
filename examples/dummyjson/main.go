@@ -21,7 +21,7 @@ func main() {
 	{
 		logger = log.NewLogfmtLogger(log.NewSyncWriter(os.Stdout))
 		logger = log.With(logger, "ts", log.DefaultTimestampUTC)
-		logger = log.With(logger, "svc", "erp-client")
+		logger = log.With(logger, "svc", "grpc-client")
 		logger.Log("app", os.Args[0], "event", "starting")
 	}
 
